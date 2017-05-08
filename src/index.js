@@ -1,5 +1,5 @@
 // @flow
-import querystring from 'querystring';
+import { parse } from 'qs';
 import objectAssign from 'object-assign';
 import 'whatwg-fetch';
 
@@ -94,7 +94,7 @@ function getPageReferrer(): ?string {
 
 function getUTMCampaign(): ?string {
   if (_hasWindow() && window.location.search) {
-    const obj = querystring.parse(window.location.search.slice(1));
+    const obj = parse(window.location.search.slice(1));
     if (obj.utm_campaign) {
       return obj.utm_campaign;
     }
@@ -104,7 +104,7 @@ function getUTMCampaign(): ?string {
 
 function getUTMChannel(): ?string {
   if (_hasWindow() && window.location.search) {
-    const obj = querystring.parse(window.location.search.slice(1));
+    const obj = parse(window.location.search.slice(1));
     if (obj.utm_channel) {
       return obj.utm_channel;
     }

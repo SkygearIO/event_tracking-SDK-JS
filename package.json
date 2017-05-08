@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1",
-    "querystring": "^0.2.0",
+    "qs": "^6.4.0",
     "whatwg-fetch": "^2.0.3"
   }
 }
