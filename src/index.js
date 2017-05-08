@@ -1,5 +1,4 @@
 // @flow
-import nodeurl from 'url';
 import querystring from 'querystring';
 import objectAssign from 'object-assign';
 import 'whatwg-fetch';
@@ -350,10 +349,8 @@ export class SkygearEventTracker {
 
   constructor(container: SkygearContainer) {
     this._container = container;
-    const endpoint = nodeurl.resolve(
-      this._container.endPoint,
-      DEFAULT_MOUNT_PATH
-    );
+    const endpoint =
+      this._container.endPoint.replace(/\/$/, '') + DEFAULT_MOUNT_PATH;
     this._writer = new Writer(new WindowLocalStorage(), endpoint);
   }
 
