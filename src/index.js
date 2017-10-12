@@ -120,8 +120,8 @@ function getUserAgent(): ?string {
 }
 
 interface SyncStorage {
-  setItem(key: string, value: string): void,
-  getItem(key: string): ?string,
+  setItem(key: string, value: string): void;
+  getItem(key: string): ?string;
 }
 
 class WindowLocalStorage implements SyncStorage {
